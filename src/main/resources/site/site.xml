@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <config>
+        <option-set name="contactOptions">
+            <label i18n="contact">Contact</label>
+            <expanded>false</expanded>
+            <occurrences minimum="1" maximum="0"/>
+            <options minimum="1" maximum="1">
+                <option name="email">
+                    <label i18n="contact.email.label">E-mail</label>
+                    <items>
+                        <input name="email" type="TextLine">
+                            <label i18n="contact.email.address">E-mail address</label>
+                            <occurences minimum="1" maximum="1"/>
+                            <help-text i18n="contact.email.help-text">Add an e-mail address that researchers MAY use for
+                                reporting security issues.
+                            </help-text>
+                        </input>
+                    </items>
+                </option>
+                <option name="tel">
+                    <label i18n="contact.tel.label">Phone</label>
+                    <items>
+                        <input name="tel" type="TextLine">
+                            <label i18n="contact.tel">Phone</label>
+                            <occurrences minimum="1" maximum="1"/>
+                            <help-text i18n="contact.tel.help-text">Add an e-mail address that researchers MAY use for
+                                reporting security issues.
+                            </help-text>
+                        </input>
+                    </items>
+                </option>
+                <option name="url">
+                    <label i18n="contact.url.label">Web page</label>
+                    <items>
+                        <input name="url" type="TextLine">
+                            <label i18n="contact.url">URL</label>
+                            <occurrences minimum="1" maximum="1"/>
+                            <help-text i18n="contact.url.help-text">Add an web address that researchers MAY use for
+                                reporting security issues.
+                            </help-text>
+                        </input>
+                    </items>
+                </option>
+            </options>
+        </option-set>
+        <input name="encryption" type="TextArea">
+            <label i18n="encryption">Encryption</label>
+            <occurences minimum="0" maximum="1"/>
+            <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
+                www.example.com/public-key.txt
+            </help-text>
+        </input>
+        <input name="acknowledgements" type="TextLine">
+            <label i18n="acknowledgements">Acknowledgements</label>
+            <occurences minimum="0" maximum="1"/>
+            <help-text i18n="acknowledgements.help-text">This directive allows you to link to a page where security
+                researchers are recognized for their reports. The page SHOULD list
+                individuals or companies that disclosed security vulnerabilities and
+                worked with you to remediate the issue.
+            </help-text>
+        </input>
+        <input name="policy" type="TextLine">
+            <label i18n="policy">Policy</label>
+            <occurences minimum="0" maximum="1"/>
+            <help-text i18n="policy.help-text">With the Policy directive, you can link to where your security policy and/or disclosure policy is
+                located. This can help security researchers understand what you are looking for and how to report
+                security vulnerabilities.
+            </help-text>
+        </input>
+        <input name="signature" type="TextArea">
+            <label i18n="signature.label">Signature</label>
+            <occurences minimum="0" maximum="1"/>
+            <help-text i18n="signature.help-text">In order to ensure the authenticity of the security.txt file you
+                should insert your signed signature here. It will appear under
+                www.example.org/.well-known/security.txt.sig
+
+                When it comes to verifying the authenticity of the file, it is always
+                the security researcher's responsibility to make sure the key being
+                specified is indeed one they trust.
+            </help-text>
+        </input>
+        <input name="hiring" type="TextLine">
+            <label i18n="hiring">Hiring</label>
+            <occurences minimum="0" maximum="1"/>
+            <help-text i18n="hiring.help-text">The "Hiring" directive is for linking to the vendor's security-
+                related job positions.
+            </help-text>
+        </input>
+    </config>
+    <mappings>
+        <mapping controller="/services/securitytxt/securitytxt.js" order="10">
+            <pattern>/security.txt</pattern>
+        </mapping>
+        <mapping controller="/services/securitytxt/securitytxt.js" order="10">
+            <pattern>/.well-known/security.txt</pattern>
+        </mapping>
+        <mapping controller="/services/securitytxt/publickey.js" order="10">
+            <pattern>/pgp-key.txt</pattern>
+        </mapping>
+        <mapping controller="/services/securitytxt/signature.js" order="10">
+            <pattern>/.well-known/security.txt.sig</pattern>
+        </mapping>
+    </mappings>
+</site>
