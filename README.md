@@ -5,9 +5,16 @@ Easy to set up and use security.txt for Enonic XP.
 The application is available through [Enonic Market](https://market.enonic.com/vendors/bouvet/securitytxt).
 
 ### Install application
+
+#### Enonic Market
 Open the Applications section of your Enonic XP installation. Click 'Install', 
 and locate the 'Security.txt' app in the 'Enonic Market' tab. Now click the 'Install'
 button.
+
+#### Build yourself
+Build this app with gradle. In the terminal, from the root of the project, enter `./gradlew build`. On Windows, just enter `gradlew build`
+in the command line from the project root. Next, move the JAR file from build/libs to your `$XP_HOME/deploy` directory. The Security.txt
+app will now be available to add to your websites through the Content Manager app.
 
 ### Apply the application to your site
 Edit your site settings by clicking 'edit' on the site node in Content Manager. Select 'Security.txt'
@@ -58,3 +65,15 @@ This app is available in English and Norwegian. Language is automatically detect
 
 ## Links
 [Read the entire spec and more at securitytext.org](https://securitytext.org/)
+
+## Compatibility
+
+| App version | XP version |
+| ----------- | ---------- |
+| 1.0.x | 6.7.0 |
+
+## Changelog
+
+### 1.0.0
+
+* Initial version
