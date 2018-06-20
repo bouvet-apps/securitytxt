@@ -74,6 +74,14 @@ This app is available in English and Norwegian. Language is automatically detect
 
 ## Changelog
 
+### 1.0.2
+
+* Empty input fields will now no longer output "undefined".
+
+### 1.0.1
+
+* Fixed norwegian titles for e-mail-label in app config form.
+
 ### 1.0.0
 
 * Initial version
