@@ -1,5 +1,5 @@
 # Security.txt for Enonic XP
-Easy to set up and use security.txt for Enonic XP.
+Easy to set up and use security.txt for Enonic XP. You should consult [securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to best use it on your site.
 
 ## How to use
 The application is available through [Enonic Market](https://market.enonic.com/vendors/bouvet/securitytxt).
@@ -24,7 +24,7 @@ in the 'Applications' search box, and click to select it. It is now added to you
 All security.txt options are available through site configuration of this app.
 
 ### Site configuration
-You can any of the available entries by entering text in the available input fields. You should consult [https://securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to use it on your site. The "Contact" directive is not optional. 
+You can any of the available entries by entering text in the available input fields. You should consult [securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to use it on your site. The "Contact" directive is not optional. 
 
 #### Contact
 Add one or more ways that researchers MAY use for reporting security issues.  The value can be an email address, a phone number and/or a contact page with more information.  The "Contact:" directive MUST always be present in a security.txt file.  URIs SHOULD be loaded over HTTPS.  Security email addresses SHOULD use the conventions defined in [section 4 of [RFC2142]](https://tools.ietf.org/html/rfc2142#section-4), but there is no requirement for this directive to be an email address.
@@ -32,7 +32,7 @@ Add one or more ways that researchers MAY use for reporting security issues.  Th
 [Documentation for the Contact directive](https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.3)
 
 #### Encryption
-This directive allows you to point to an encryption key that you want security researchers to use for encrypted communication.  You MUST NOT directly add your key to the field, instead the value of this field MUST be a URI pointing to a location where the key can be retrieved from.  If the key is being retrieved from a website, then the key MUST be loaded over HTTPS.
+This directive allows you to point to an encryption key that you want security researchers to use for encrypted communication.  The Securitytxt app allows you to simply paste the key into the appropriate textarea, and will serve the key at a separate URI. The key MUST be loaded over HTTPS.
 
 When it comes to verifying the authenticity of the key, it is always the security researcher's responsibility to make sure the key being specified is indeed one they trust.  Researchers MUST NOT assume that this key is used to generate the signature file.
 
