@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-    <config>
+    <form>
         <option-set name="contactOptions">
             <label i18n="contact">Contact</label>
             <expanded>false</expanded>
@@ -69,7 +69,7 @@
             </help-text>
         </input>
         <input name="signature" type="TextArea">
-            <label i18n="signature.label">Signature</label>
+            <label i18n="signature">Signature</label>
             <occurences minimum="0" maximum="1"/>
             <help-text i18n="signature.help-text">In order to ensure the authenticity of the security.txt file you
                 should insert your signed signature here. It will appear under
@@ -87,7 +87,7 @@
                 related job positions.
             </help-text>
         </input>
-    </config>
+    </form>
     <mappings>
         <mapping controller="/services/securitytxt/securitytxt.js" order="10">
             <pattern>/security.txt</pattern>

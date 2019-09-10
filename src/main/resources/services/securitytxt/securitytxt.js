@@ -1,6 +1,6 @@
 var libs = {
     portal: require('/lib/xp/portal'),
-    util: require('/lib/enonic/util')
+    util: require('/lib/util')
 };
 
 function handleGet() {
@@ -9,7 +9,6 @@ function handleGet() {
     var securityTxt = "";
 
     libs.util.data.forceArray(siteConfig.contactOptions).forEach(function(item) {
-        log.info(JSON.stringify(item, null, 2));
         if (item._selected === 'url' && item[item._selected].url) {
             securityTxt += 'Contact: ' + item[item._selected].url + '\n';
         } else if (item._selected === 'tel' && item[item._selected].tel) {
