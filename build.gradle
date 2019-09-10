@@ -21,3 +21,8 @@ repositories {
     jcenter()
     xp.enonicRepo()
 }
+
+wrapper {
+    gradleVersion = '5.6'
+    distributionType = Wrapper.DistributionType.BIN
+}
