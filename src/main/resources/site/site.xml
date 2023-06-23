@@ -88,22 +88,23 @@
             </help-text>
         </input>
         <option-set name="expiresOptions">
-            <label>Expiry date type</label>
-            <occurrences minimum="1" maximum="1"/>  
-            <help-text>Select a dynamic or static expiry date for security.txt.</help-text>
-            <options minimum="1" maximum="1">   
+            <label i18n="expiresOptions.label">Expires</label>
+            <occurrences minimum="1" maximum="1"/>
+            <help-text i18n="expiresOptions.help-text">Select a dynamic or static expiry date for security.txt.</help-text>
+            <options minimum="1" maximum="1">
                 <option name="dynamic">
-                    <label>Auto-generated dynamic date</label>
-                    <help-text></help-text>
+                    <label i18n="expiresOptions.dynamic.label">Auto-generated dynamic date</label>
+                    <help-text i18n="expiresOptions.dynamic.help-text">Sets the expiry date to dynamically be in 60 days.</help-text>
                 </option>
                 <option name="static">
-                <label>Fixed/static date (manually selected)</label>
-                <items>
-                    <input name="date" type="Date">
-                    <label>Date</label>
-                    <occurrences minimum="1" maximum="1"/>
-                    </input>
-                </items>
+                    <label i18n="expiresOptions.static.label">Fixed/static date (manually selected)</label>
+                    <help-text i18n="expiresOptions.static.help-text">Sets the expiry date to be a static date. Make sure you update this value periodically and keep your file under review.</help-text>
+                    <items>
+                        <input name="date" type="Date">
+                        <label i18n="expiresOptions.static.date">Date</label>
+                        <occurrences minimum="1" maximum="1"/>
+                        </input>
+                    </items>
                 </option>
             </options>
         </option-set>
