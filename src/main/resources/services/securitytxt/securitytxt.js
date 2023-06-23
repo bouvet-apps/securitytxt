@@ -8,18 +8,18 @@ function handleGet() {
     var siteConfig = libs.portal.getSiteConfig();
     var securityTxt = "";
 
-    libs.util.data.forceArray(siteConfig.contactOptions).forEach(function(item) {
+    libs.util.data.forceArray(siteConfig.contactOptions).forEach(function (item) {
         if (item._selected === 'url' && item[item._selected].url) {
             securityTxt += 'Contact: ' + item[item._selected].url + '\n';
         } else if (item._selected === 'tel' && item[item._selected].tel) {
             securityTxt += 'Contact: tel:' + item[item._selected].tel + '\n';
         } else if (item._selected === 'email' && item[item._selected].email) {
-            securityTxt += 'Contact: mailto:' + item[item._selected].email+ '\n';
+            securityTxt += 'Contact: mailto:' + item[item._selected].email + '\n';
         }
     });
 
     if (siteConfig.encryption) {
-        securityTxt += 'Encryption: ' + libs.portal.pageUrl({type: 'absolute'}) + 'pgp-key.txt\n';
+        securityTxt += 'Encryption: ' + libs.portal.pageUrl({ type: 'absolute' }) + 'pgp-key.txt\n';
     }
 
     if (siteConfig.acknowledgements) {
@@ -31,11 +31,27 @@ function handleGet() {
     }
 
     if (siteConfig.signature) {
-        securityTxt += 'Signature: ' + libs.portal.pageUrl({type: 'absolute'}) + '.well-known/security.txt.sig\n';
+        securityTxt += 'Signature: ' + libs.portal.pageUrl({ type: 'absolute' }) + '.well-known/security.txt.sig\n';
     }
 
     if (siteConfig.hiring) {
         securityTxt += 'Hiring: ' + siteConfig.hiring + '\n';
+    }
+
+    if (siteConfig.expiresOptions &&
+        siteConfig.expiresOptions.static &&
+        siteConfig.expiresOptions.static.date) {
+
+        var expiryDate = new Date(siteConfig.expiresOptions.static.date);
+
+        securityTxt += 'Expires: ' + expiryDate.toISOString() + '\n';
+
+    } else {
+        // Expiry date is mandatory. Default to dynamic expiry date if options are missing.
+        var expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + 60);
+
+        securityTxt += 'Expires: ' + expiryDate.toISOString() + '\n';
     }
 
     return {

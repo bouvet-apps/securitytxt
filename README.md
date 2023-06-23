@@ -74,6 +74,12 @@ This app is available in English and Norwegian. Language is automatically detect
 
 ## Changelog
 
+### 2.1.0
+* Support for "Expires" field
+
+### 2.0.1
+* Enonic XP 7 compatibility
+
 ### 1.0.2
 
 * Empty input fields will now no longer output "undefined".

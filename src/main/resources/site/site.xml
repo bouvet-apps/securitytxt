@@ -87,6 +87,26 @@
                 related job positions.
             </help-text>
         </input>
+        <option-set name="expiresOptions">
+            <label>Expiry date type</label>
+            <occurrences minimum="1" maximum="1"/>  
+            <help-text>Select a dynamic or static expiry date for security.txt.</help-text>
+            <options minimum="1" maximum="1">   
+                <option name="dynamic">
+                    <label>Auto-generated dynamic date</label>
+                    <help-text></help-text>
+                </option>
+                <option name="static">
+                <label>Fixed/static date (manually selected)</label>
+                <items>
+                    <input name="date" type="Date">
+                    <label>Date</label>
+                    <occurrences minimum="1" maximum="1"/>
+                    </input>
+                </items>
+                </option>
+            </options>
+        </option-set>
     </form>
     <mappings>
         <mapping controller="/services/securitytxt/securitytxt.js" order="10">
