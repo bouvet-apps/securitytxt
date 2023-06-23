@@ -60,6 +60,11 @@ The "Hiring" directive is for linking to the vendor's security-related job posit
 
 [Documentation for the Hiring directive](https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.8)
 
+#### Expires
+The date and time when the content of the security.txt file should be considered stale (so security researchers should then not trust it).
+
+[Documentation for the Expires directive](https://www.rfc-editor.org/rfc/rfc9116#section-2.5.5)
+
 ## Language
 This app is available in English and Norwegian. Language is automatically detected by Enonic XP and applied accordingly.
 
