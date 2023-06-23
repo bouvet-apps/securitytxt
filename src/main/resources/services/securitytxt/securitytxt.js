@@ -1,12 +1,12 @@
-var libs = {
+const libs = {
     portal: require('/lib/xp/portal'),
     util: require('/lib/util')
 };
 
 function handleGet() {
 
-    var siteConfig = libs.portal.getSiteConfig();
-    var securityTxt = "";
+    const siteConfig = libs.portal.getSiteConfig();
+    let securityTxt = "";
 
     libs.util.data.forceArray(siteConfig.contactOptions).forEach(function (item) {
         if (item._selected === 'url' && item[item._selected].url) {
@@ -42,13 +42,13 @@ function handleGet() {
         siteConfig.expiresOptions.static &&
         siteConfig.expiresOptions.static.date) {
 
-        var expiryDate = new Date(siteConfig.expiresOptions.static.date);
+        const expiryDate = new Date(siteConfig.expiresOptions.static.date);
 
         securityTxt += 'Expires: ' + expiryDate.toISOString() + '\n';
 
     } else {
         // Expiry date is mandatory. Default to dynamic expiry date if options are missing.
-        var expiryDate = new Date();
+        const expiryDate = new Date();
         expiryDate.setDate(expiryDate.getDate() + 60);
 
         securityTxt += 'Expires: ' + expiryDate.toISOString() + '\n';
