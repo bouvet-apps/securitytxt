@@ -19,7 +19,7 @@ function handleGet() {
     });
 
     if (siteConfig.encryption) {
-        securityTxt += 'Encryption: ' + libs.portal.pageUrl({ type: 'absolute' }) + 'pgp-key.txt\n';
+        securityTxt += 'Encryption: ' + libs.portal.pageUrl({ id: libs.portal.getSite()._id,type: 'absolute' }) + 'pgp-key.txt\n';
     }
 
     if (siteConfig.acknowledgements) {
@@ -31,7 +31,7 @@ function handleGet() {
     }
 
     if (siteConfig.signature) {
-        securityTxt += 'Signature: ' + libs.portal.pageUrl({ type: 'absolute' }) + '.well-known/security.txt.sig\n';
+      securityTxt += 'Signature: ' + libs.portal.pageUrl({ id: libs.portal.getSite()._id, type: 'absolute' }) + '.well-known/security.txt.sig\n';
     }
 
     if (siteConfig.hiring) {
