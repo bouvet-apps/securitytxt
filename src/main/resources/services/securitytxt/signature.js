@@ -1,11 +1,11 @@
-var libs = {
+const libs = {
     portal: require('/lib/xp/portal'),
     util: require('/lib/util')
 };
 
 function handleGet() {
 
-    var siteConfig = libs.portal.getSiteConfig();
+    const siteConfig = libs.portal.getSiteConfig();
 
     if (siteConfig.signature !== '') {
         return {
