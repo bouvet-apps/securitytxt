@@ -3,10 +3,20 @@ const libs = {
     util: require('/lib/util')
 };
 
-function handleGet() {
+// Takes the old way of configuring app, puts them in the optionset for unsigned configuration and removes the old config.
+function createNewConfigOptions(siteConfig) {
+    for (let key in siteConfig) {
+        if (siteConfig.hasOwnProperty(key)) {
+            siteConfig.signedOptionSet.unsigned = siteConfig[key];
+            delete siteConfig.key;
+        }
+    }
+    return siteConfig;
+}
 
-    const siteConfig = libs.portal.getSiteConfig();
-    let securityTxt = "";
+// Creates the securityTxt from the unsigned options, same way as done in previous versions of app.
+function createUnsignedSecurityTxt(siteConfig) {
+    let securityTxt = ""
 
     libs.util.data.forceArray(siteConfig.contactOptions).forEach(function (item) {
         if (item._selected === 'url' && item[item._selected].url) {
@@ -30,10 +40,6 @@ function handleGet() {
         securityTxt += 'Policy: ' + siteConfig.policy + '\n';
     }
 
-    if (siteConfig.signature) {
-      securityTxt += 'Signature: ' + libs.portal.pageUrl({ id: libs.portal.getSite()._id, type: 'absolute' }) + '.well-known/security.txt.sig\n';
-    }
-
     if (siteConfig.hiring) {
         securityTxt += 'Hiring: ' + siteConfig.hiring + '\n';
     }
@@ -52,6 +58,26 @@ function handleGet() {
         expiryDate.setDate(expiryDate.getDate() + 60);
 
         securityTxt += 'Expires: ' + expiryDate.toISOString() + '\n';
+    }
+
+    return securityTxt;
+}
+
+function handleGet() {
+    let siteConfig = libs.portal.getSiteConfig();
+
+    let securityTxt = "";
+
+    // Check if new config per version 2.2.0 is not present and if any of the old configuration options are available.
+    if(!siteConfig.signedOptionSet && (siteConfig.contactOptions || siteConfig.encryption || siteConfig.hiring || siteConfig.policy || siteConfig.expiresOptions)) {
+        siteConfig = createNewConfigOptions(siteConfig);
+    }
+
+    if (siteConfig.signedOptionSet.signed) {
+        securityTxt = siteConfig.signedOptionSet.signed.signedText;
+    } else {
+        const unsignedConfig = siteConfig.signedOptionSet.unsigned;
+        securityTxt = createUnsignedSecurityTxt(unsignedConfig);
     }
 
     return {

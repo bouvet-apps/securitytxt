@@ -1,109 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
     <form>
-        <option-set name="contactOptions">
-            <label i18n="contact">Contact</label>
+        <option-set name="signedOptionSet">
+            <label i18n="signedOptionSet.label">Signed/Unsigned</label>
             <expanded>false</expanded>
-            <occurrences minimum="1" maximum="0"/>
-            <options minimum="1" maximum="1">
-                <option name="email">
-                    <label i18n="contact.email.label">E-mail</label>
-                    <items>
-                        <input name="email" type="TextLine">
-                            <label i18n="contact.email.address">E-mail address</label>
-                            <occurences minimum="1" maximum="1"/>
-                            <help-text i18n="contact.email.help-text">Add an e-mail address that researchers MAY use for
-                                reporting security issues.
-                            </help-text>
-                        </input>
-                    </items>
-                </option>
-                <option name="tel">
-                    <label i18n="contact.tel.label">Phone</label>
-                    <items>
-                        <input name="tel" type="TextLine">
-                            <label i18n="contact.tel">Phone</label>
-                            <occurrences minimum="1" maximum="1"/>
-                            <help-text i18n="contact.tel.help-text">Add an e-mail address that researchers MAY use for
-                                reporting security issues.
-                            </help-text>
-                        </input>
-                    </items>
-                </option>
-                <option name="url">
-                    <label i18n="contact.url.label">Web page</label>
-                    <items>
-                        <input name="url" type="TextLine">
-                            <label i18n="contact.url">URL</label>
-                            <occurrences minimum="1" maximum="1"/>
-                            <help-text i18n="contact.url.help-text">Add an web address that researchers MAY use for
-                                reporting security issues.
-                            </help-text>
-                        </input>
-                    </items>
-                </option>
-            </options>
-        </option-set>
-        <input name="encryption" type="TextArea">
-            <label i18n="encryption">Encryption</label>
-            <occurences minimum="0" maximum="1"/>
-            <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
-                www.example.com/public-key.txt
-            </help-text>
-        </input>
-        <input name="acknowledgements" type="TextLine">
-            <label i18n="acknowledgements">Acknowledgements</label>
-            <occurences minimum="0" maximum="1"/>
-            <help-text i18n="acknowledgements.help-text">This directive allows you to link to a page where security
-                researchers are recognized for their reports. The page SHOULD list
-                individuals or companies that disclosed security vulnerabilities and
-                worked with you to remediate the issue.
-            </help-text>
-        </input>
-        <input name="policy" type="TextLine">
-            <label i18n="policy">Policy</label>
-            <occurences minimum="0" maximum="1"/>
-            <help-text i18n="policy.help-text">With the Policy directive, you can link to where your security policy and/or disclosure policy is
-                located. This can help security researchers understand what you are looking for and how to report
-                security vulnerabilities.
-            </help-text>
-        </input>
-        <input name="signature" type="TextArea">
-            <label i18n="signature">Signature</label>
-            <occurences minimum="0" maximum="1"/>
-            <help-text i18n="signature.help-text">In order to ensure the authenticity of the security.txt file you
-                should insert your signed signature here. It will appear under
-                www.example.org/.well-known/security.txt.sig
-
-                When it comes to verifying the authenticity of the file, it is always
-                the security researcher's responsibility to make sure the key being
-                specified is indeed one they trust.
-            </help-text>
-        </input>
-        <input name="hiring" type="TextLine">
-            <label i18n="hiring">Hiring</label>
-            <occurences minimum="0" maximum="1"/>
-            <help-text i18n="hiring.help-text">The "Hiring" directive is for linking to the vendor's security-
-                related job positions.
-            </help-text>
-        </input>
-        <option-set name="expiresOptions">
-            <label i18n="expiresOptions.label">Expires</label>
             <occurrences minimum="1" maximum="1"/>
-            <help-text i18n="expiresOptions.help-text">Select a dynamic or static expiry date for security.txt.</help-text>
             <options minimum="1" maximum="1">
-                <option name="dynamic">
-                    <label i18n="expiresOptions.dynamic.label">Auto-generated dynamic date</label>
-                    <help-text i18n="expiresOptions.dynamic.help-text">Sets the expiry date to dynamically be in 60 days.</help-text>
-                </option>
-                <option name="static">
-                    <label i18n="expiresOptions.static.label">Fixed/static date (manually selected)</label>
-                    <help-text i18n="expiresOptions.static.help-text">Sets the expiry date to be a static date. Make sure you update this value periodically and keep your file under review.</help-text>
+                <option name="signed">
+                    <label i18n="signed.label">PGP-Signed</label>
                     <items>
-                        <input name="date" type="Date">
-                        <label i18n="expiresOptions.static.date">Date</label>
-                        <occurrences minimum="1" maximum="1"/>
+                        <input name="signedText" type="TextArea">
+                            <label i18n="signedText">Text</label>
                         </input>
+                    </items>
+                </option>
+                <option name="unsigned">
+                    <label i18n="unsigned.label">Unsigned</label>
+                    <items>
+                        <option-set name="contactOptions">
+                            <label i18n="contact">Contact</label>
+                            <expanded>false</expanded>
+                            <occurrences minimum="1" maximum="0"/>
+                            <options minimum="1" maximum="1">
+                                <option name="email">
+                                    <label i18n="contact.email.label">E-mail</label>
+                                    <items>
+                                        <input name="email" type="TextLine">
+                                            <label i18n="contact.email.address">E-mail address</label>
+                                            <occurences minimum="1" maximum="1"/>
+                                            <help-text i18n="contact.email.help-text">Add an e-mail address that researchers MAY use for
+                                                reporting security issues.
+                                            </help-text>
+                                        </input>
+                                    </items>
+                                </option>
+                                <option name="tel">
+                                    <label i18n="contact.tel.label">Phone</label>
+                                    <items>
+                                        <input name="tel" type="TextLine">
+                                            <label i18n="contact.tel">Phone</label>
+                                            <occurrences minimum="1" maximum="1"/>
+                                            <help-text i18n="contact.tel.help-text">Add an e-mail address that researchers MAY use for
+                                                reporting security issues.
+                                            </help-text>
+                                        </input>
+                                    </items>
+                                </option>
+                                <option name="url">
+                                    <label i18n="contact.url.label">Web page</label>
+                                    <items>
+                                        <input name="url" type="TextLine">
+                                            <label i18n="contact.url">URL</label>
+                                            <occurrences minimum="1" maximum="1"/>
+                                            <help-text i18n="contact.url.help-text">Add an web address that researchers MAY use for
+                                                reporting security issues.
+                                            </help-text>
+                                        </input>
+                                    </items>
+                                </option>
+                            </options>
+                        </option-set>
+                        <input name="encryption" type="TextArea">
+                            <label i18n="encryption">Encryption</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
+                                www.example.com/public-key.txt
+                            </help-text>
+                        </input>
+                        <input name="acknowledgements" type="TextLine">
+                            <label i18n="acknowledgements">Acknowledgements</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="acknowledgements.help-text">This directive allows you to link to a page where security
+                                researchers are recognized for their reports. The page SHOULD list
+                                individuals or companies that disclosed security vulnerabilities and
+                                worked with you to remediate the issue.
+                            </help-text>
+                        </input>
+                        <input name="policy" type="TextLine">
+                            <label i18n="policy">Policy</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="policy.help-text">With the Policy directive, you can link to where your security policy and/or disclosure policy is
+                                located. This can help security researchers understand what you are looking for and how to report
+                                security vulnerabilities.
+                            </help-text>
+                        </input>
+                        <input name="hiring" type="TextLine">
+                            <label i18n="hiring">Hiring</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="hiring.help-text">The "Hiring" directive is for linking to the vendor's security-
+                                related job positions.
+                            </help-text>
+                        </input>
+                        <input name="preferredLanguages" type="TextLine">
+                            <label i18n="preferred-languages">Preferred languages</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="preferredLanguages.help-text">
+                                The "Preferred-languages" is used to indicate a set of natural languages that are preferred when submitting security reports. Write language tags in a comma-seperated list for example "en, es, fr"
+                            </help-text>
+                        </input>
+                        <option-set name="expiresOptions">
+                            <label i18n="expiresOptions.label">Expires</label>
+                            <occurrences minimum="1" maximum="1"/>
+                            <help-text i18n="expiresOptions.help-text">Select a dynamic or static expiry date for security.txt.</help-text>
+                            <options minimum="1" maximum="1">
+                                <option name="dynamic">
+                                    <label i18n="expiresOptions.dynamic.label">Auto-generated dynamic date</label>
+                                    <help-text i18n="expiresOptions.dynamic.help-text">Sets the expiry date to dynamically be in 60 days.</help-text>
+                                </option>
+                                <option name="static">
+                                    <label i18n="expiresOptions.static.label">Fixed/static date (manually selected)</label>
+                                    <help-text i18n="expiresOptions.static.help-text">Sets the expiry date to be a static date. Make sure you update this value periodically and keep your file under review.</help-text>
+                                    <items>
+                                        <input name="date" type="Date">
+                                            <label i18n="expiresOptions.static.date">Date</label>
+                                            <occurrences minimum="1" maximum="1"/>
+                                        </input>
+                                    </items>
+                                </option>
+                            </options>
+                        </option-set>
                     </items>
                 </option>
             </options>
@@ -118,9 +133,6 @@
         </mapping>
         <mapping controller="/services/securitytxt/publickey.js" order="10">
             <pattern>/pgp-key.txt</pattern>
-        </mapping>
-        <mapping controller="/services/securitytxt/signature.js" order="10">
-            <pattern>/.well-known/security.txt.sig</pattern>
         </mapping>
     </mappings>
 </site>
