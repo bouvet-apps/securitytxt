@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
     <form>
-        <option-set name="signedOptionSet">
-            <label i18n="signedOptionSet.label">Signed/Unsigned</label>
+        <option-set name="options">
+            <label i18n="options.label">Use textarea or input fields</label>
             <expanded>false</expanded>
             <occurrences minimum="1" maximum="1"/>
             <options minimum="1" maximum="1">
-                <option name="signed">
-                    <label i18n="signed.label">PGP-Signed</label>
+                <option name="textarea">
+                    <label i18n="textarea.label">Textarea</label>
                     <items>
-                        <input name="signedText" type="TextArea">
-                            <label i18n="signedText">Text</label>
+                        <input name="text" type="TextArea">
+                            <label i18n="text">Text</label>
                         </input>
                     </items>
                 </option>
-                <option name="unsigned">
-                    <label i18n="unsigned.label">Unsigned</label>
+                <option name="fields">
+                    <label i18n="fields.label">Fields</label>
                     <items>
+                        <input name="comments" type="TextArea">
+                            <label i18n="comments">Comments</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="comments.help-text">Display comments at the top of the security.txt. Write # followed by your comment, for example "# This is a comment". Use # for each new line.
+                            </help-text>
+                        </input>
                         <option-set name="contactOptions">
                             <label i18n="contact">Contact</label>
                             <expanded>false</expanded>
@@ -95,8 +101,12 @@
                             <label i18n="preferred-languages">Preferred languages</label>
                             <occurences minimum="0" maximum="1"/>
                             <help-text i18n="preferredLanguages.help-text">
-                                The "Preferred-languages" is used to indicate a set of natural languages that are preferred when submitting security reports. Write language tags in a comma-seperated list for example "en, es, fr"
+                                The "Preferred-languages" is used to indicate a set of natural languages that are preferred when submitting security reports. Write language tags in a comma-seperated list for example "en, es, fr".
                             </help-text>
+                        </input>
+                        <input name="displayCanonical" type="CheckBox">
+                            <label i18n="display-canonical">Display canonical URIs</label>
+                            <help-text i18n="display-canonical.help-text">Check to display canonical URIs for where the "security.txt" is located. Ex. "https://example.com/.well-known/security.txt"</help-text>
                         </input>
                         <option-set name="expiresOptions">
                             <label i18n="expiresOptions.label">Expires</label>
@@ -125,14 +135,14 @@
         </option-set>
     </form>
     <mappings>
+        <mapping controller="/services/securitytxt/publickey.js" order="10">
+            <pattern>/pgp-key.txt</pattern>
+        </mapping>
         <mapping controller="/services/securitytxt/securitytxt.js" order="10">
             <pattern>/security.txt</pattern>
         </mapping>
         <mapping controller="/services/securitytxt/securitytxt.js" order="10">
             <pattern>/.well-known/security.txt</pattern>
-        </mapping>
-        <mapping controller="/services/securitytxt/publickey.js" order="10">
-            <pattern>/pgp-key.txt</pattern>
         </mapping>
     </mappings>
 </site>
