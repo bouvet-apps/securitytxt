@@ -1,6 +1,6 @@
 const libs = {
-  portal: require("/lib/xp/portal"),
-  util: require("/lib/util"),
+  portal: require('/lib/xp/portal'),
+  util: require('/lib/util')
 };
 
 function handleGet() {
@@ -8,7 +8,7 @@ function handleGet() {
 
   if (siteConfig.option.fields.encryption !== "") {
     return {
-      contentType: "text/plain",
+      contentType: 'text/plain',
       body: siteConfig.option.fields.encryption !== "",
     };
   } else {

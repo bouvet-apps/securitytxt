@@ -1,9 +1,9 @@
 const libs = {
-  portal: require("/lib/xp/portal"),
-  util: require("/lib/util"),
+  portal: require('/lib/xp/portal'),
+  util: require('/lib/util')
 };
 
-// Takes the old way of configuring app, puts them in the optionset for textarea configuration and removes the old config.
+// Takes the old way of configuring app, puts them in the optionset for fields configuration and removes the old config.
 function createNewConfigOptions(siteConfig) {
   for (let key in siteConfig) {
     if (siteConfig.hasOwnProperty(key)) {
@@ -14,8 +14,8 @@ function createNewConfigOptions(siteConfig) {
   return siteConfig;
 }
 
-// Creates the securityTxt from the textarea options, same way as done in previous versions of app.
-function createtextareaSecurityTxt(siteConfig) {
+// Creates the securityTxt from the inputfields options, same way as done in previous versions of app.
+function createFieldsSecurityTxt(siteConfig) {
   let securityTxt = "";
 
   if (siteConfig.comments) {
@@ -86,11 +86,11 @@ function handleGet() {
     securityTxt = siteConfig.options.textarea.text;
   } else {
     const fieldsConfig = siteConfig.options.fields;
-    securityTxt = createtextareaSecurityTxt(fieldsConfig);
+    securityTxt = createFieldsSecurityTxt(fieldsConfig);
   }
 
   return {
-    contentType: "text/plain",
+    contentType: 'text/plain',
     body: securityTxt,
   };
 }

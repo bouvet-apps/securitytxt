@@ -21,12 +21,12 @@ Edit your site settings by clicking 'edit' on the site node in Content Manager. 
 in the 'Applications' search box, and click to select it. It is now added to your site.
 
 ## Set up the security.txt for your site
-The app offers two different options for adding security.txt to your site. Either enter your information in text area provided by the 'Textarea' option or use the fields available through the 'Fields' alternative. The 'Textarea' provides the possiblity to add the PGP signature to the security.txt. 
+The app offers two different options for adding security.txt to your site. Either enter your information in text area provided by the 'Textarea' option or use the inputfields available through the 'Inputfields' alternative. The 'Textarea' provides the possiblity to add a PGP signature to the security.txt. 
 
 For more information regarding PGP-signature see [section 2.3 of [RFC 9116]](https://datatracker.ietf.org/doc/html/rfc9116#name-digital-signature)
 
 ### Site configuration
-You can add any of the available entries by entering text in the available input fields or by using the textarea option.  
+You can add any of the available entries by entering text in the available inputfields or by using the textarea option.  
 
 You should consult [securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to use it on your site. The "Contact" and "Expires" directive is not optional. 
 
@@ -66,7 +66,7 @@ The "Preferred-Languages" field can be used to indicate a set of natural languag
 [Documentation for the Preferred-Languages directive](https://www.rfc-editor.org/rfc/rfc9116#section-2.5.8)
 
 #### Canonical
-The "Canonical" field indicates the canonical URIs where the "security.txt" file is located, which is usually something like "https://example.com/.well-known/security.txt". When toggle the canonical URIs will be added to the security.txt.
+The "Canonical" field indicates the canonical URIs where the "security.txt" file is located, which is usually something like "https://example.com/.well-known/security.txt". When checked the canonical URIs will be added to the security.txt.
 
 [Documentation for the Canonical directive](https://www.rfc-editor.org/rfc/rfc9116#name-canonical)
 
@@ -85,7 +85,7 @@ This app is available in English and Norwegian. Language is automatically detect
 
 | App version | XP version |
 | ----------- | ---------- |
-| 2.0.x | 7.10.0 |
+| 2.x.x | 7.10.0 |
 | 1.0.x | 6.7.0 |
 
 ## Changelog
