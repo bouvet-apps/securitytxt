@@ -91,7 +91,7 @@ function handleGet() {
 
   return {
     contentType: 'text/plain',
-    body: securityTxt,
+    body: securityTxt
   };
 }
 exports.get = handleGet;

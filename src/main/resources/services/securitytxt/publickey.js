@@ -13,7 +13,7 @@ function handleGet() {
     };
   } else {
     return {
-      status: 404,
+      status: 404
     };
   }
 }
