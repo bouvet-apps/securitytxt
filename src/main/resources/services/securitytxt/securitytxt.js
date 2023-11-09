@@ -3,7 +3,7 @@ const libs = {
   util: require('/lib/util')
 };
 
-// Takes the old way of configuring app, puts them in the optionset for fields configuration and removes the old config.
+// Takes the old way of configuring app, puts them in the optionset for input fields configuration and removes the old config.
 function createNewConfigOptions(siteConfig) {
   for (let key in siteConfig) {
     if (siteConfig.hasOwnProperty(key)) {
@@ -14,7 +14,7 @@ function createNewConfigOptions(siteConfig) {
   return siteConfig;
 }
 
-// Creates the securityTxt from the inputfields options, same way as done in previous versions of app.
+// Creates the securityTxt from the input fields, same way as done in previous versions of app.
 function createFieldsSecurityTxt(siteConfig) {
   let securityTxt = "";
 
@@ -33,7 +33,7 @@ function createFieldsSecurityTxt(siteConfig) {
   });
 
   if (siteConfig.displayCanonical) {
-    const defaultUrl = libs.portal.pageUrl({id: libs.portal.getSite()._id, type: "absolute",});
+    const defaultUrl = libs.portal.pageUrl({ id: libs.portal.getSite()._id, type: "absolute" });
     securityTxt += "Canonical: " + defaultUrl + ".well-known/security.txt" + "\n" + 
     "Canonical: " + defaultUrl + "security.txt" + "\n";
   }

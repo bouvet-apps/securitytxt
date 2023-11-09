@@ -21,12 +21,12 @@ Edit your site settings by clicking 'edit' on the site node in Content Manager. 
 in the 'Applications' search box, and click to select it. It is now added to your site.
 
 ## Set up the security.txt for your site
-The app offers two different options for adding security.txt to your site. Either enter your information in text area provided by the 'Textarea' option or use the inputfields available through the 'Inputfields' alternative. The 'Textarea' provides the possiblity to add a PGP signature to the security.txt. 
+The app offers two different options for adding security.txt to your site. Either enter your information in text area provided by the 'Textarea' option or use the input fields available through the 'Input fields' alternative. The 'Textarea' provides the possiblity to add a PGP signature to the security.txt. 
 
 For more information regarding PGP-signature see [section 2.3 of [RFC 9116]](https://datatracker.ietf.org/doc/html/rfc9116#name-digital-signature)
 
 ### Site configuration
-You can add any of the available entries by entering text in the available inputfields or by using the textarea option.  
+You can add any of the available entries by entering text in the available input fields or by using the textarea option.  
 
 You should consult [securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to use it on your site. The "Contact" and "Expires" directive is not optional. 
 
