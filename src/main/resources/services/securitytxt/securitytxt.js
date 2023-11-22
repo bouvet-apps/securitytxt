@@ -8,7 +8,7 @@ function createNewConfigOptions(siteConfig) {
   for (let key in siteConfig) {
     if (siteConfig.hasOwnProperty(key)) {
       siteConfig.options.fields = siteConfig[key];
-      delete siteConfig.key;
+      delete siteConfig[key];
     }
   }
   return siteConfig;
