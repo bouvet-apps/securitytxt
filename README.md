@@ -21,10 +21,17 @@ Edit your site settings by clicking 'edit' on the site node in Content Manager. 
 in the 'Applications' search box, and click to select it. It is now added to your site.
 
 ## Set up the security.txt for your site
-All security.txt options are available through site configuration of this app.
+The app offers two different options for adding security.txt to your site. Either enter your information in text area provided by the 'Textarea' option or use the input fields available through the 'Input fields' alternative. The 'Textarea' provides the possiblity to add a PGP signature to the security.txt. 
+
+For more information regarding PGP-signature see [section 2.3 of [RFC 9116]](https://datatracker.ietf.org/doc/html/rfc9116#name-digital-signature)
 
 ### Site configuration
-You can any of the available entries by entering text in the available input fields. You should consult [securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to use it on your site. The "Contact" directive is not optional. 
+You can add any of the available entries by entering text in the available input fields or by using the textarea option.  
+
+You should consult [securitytxt.org](https://securitytxt.org/) for details on Security.txt and how to use it on your site. The "Contact" and "Expires" directive is not optional. 
+
+#### Comments
+Textarea for adding comments if needed. Use a "#" followed by the comment and start each new line with "#". The comments are placed at the top to the security.txt files.
 
 #### Contact
 Add one or more ways that researchers MAY use for reporting security issues.  The value can be an email address, a phone number and/or a contact page with more information.  The "Contact:" directive MUST always be present in a security.txt file.  URIs SHOULD be loaded over HTTPS.  Security email addresses SHOULD use the conventions defined in [section 4 of [RFC2142]](https://tools.ietf.org/html/rfc2142#section-4), but there is no requirement for this directive to be an email address.
@@ -37,13 +44,6 @@ This directive allows you to point to an encryption key that you want security r
 When it comes to verifying the authenticity of the key, it is always the security researcher's responsibility to make sure the key being specified is indeed one they trust.  Researchers MUST NOT assume that this key is used to generate the signature file.
 
 [Documentation for the Encryption directive](https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.4)
-
-#### Signature
-In order to ensure the authenticity of the security.txt file one SHOULD use the "Signature:" directive.
-
-When it comes to verifying the authenticity of the file, it is always the security researcher's responsibility to make sure the key being specified is indeed one they trust.
-
-[Documentation for the Signature directive](https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.5)
 
 #### Policy
 With the Policy directive, you can link to where your security policy and/or disclosure policy is located.  This can help security researchers understand what you are looking for and how to report security vulnerabilities.
@@ -60,8 +60,18 @@ The "Hiring" directive is for linking to the vendor's security-related job posit
 
 [Documentation for the Hiring directive](https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.8)
 
+#### Preferred-Languages
+The "Preferred-Languages" field can be used to indicate a set of natural languages that are preferred when submitting security reports. Enter language tags, for example: "en, es, fr". 
+
+[Documentation for the Preferred-Languages directive](https://www.rfc-editor.org/rfc/rfc9116#section-2.5.8)
+
+#### Canonical
+The "Canonical" field indicates the canonical URIs where the "security.txt" file is located, which is usually something like "https://example.com/.well-known/security.txt". When checked the canonical URIs will be added to the security.txt.
+
+[Documentation for the Canonical directive](https://www.rfc-editor.org/rfc/rfc9116#name-canonical)
+
 #### Expires
-The date and time when the content of the security.txt file should be considered stale (so security researchers should then not trust it).
+The date and time when the content of the security.txt file should be considered stale (so security researchers should then not trust it). Choose between a auto-generated dynamic date or set a date. 
 
 [Documentation for the Expires directive](https://www.rfc-editor.org/rfc/rfc9116#section-2.5.5)
 
@@ -75,7 +85,9 @@ This app is available in English and Norwegian. Language is automatically detect
 
 | App version | XP version |
 | ----------- | ---------- |
-| 2.0.x | 7.10.0 |
+| 2.x.x | 7.10.0 |
+| 1.0.x | 6.7.0 |
+
 
 ## Changelog
 
