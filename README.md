@@ -88,7 +88,12 @@ This app is available in English and Norwegian. Language is automatically detect
 | 2.x.x | 7.10.0 |
 | 1.0.x | 6.7.0 |
 
+
 ## Changelog
+
+### 2.2.0
+* Update for gradle to 8.3
+* Update for maven from to maven-publish 
 
 ### 2.1.0
 * Support for "Expires" field
