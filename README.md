@@ -92,8 +92,11 @@ This app is available in English and Norwegian. Language is automatically detect
 ## Changelog
 
 ### 2.2.0
+* Added textarea option. Enables the use of PGP-signed security.txt
+* Added input fields for comments, preferred language and option to display canonical URLs
+* Removed external signature input field
 * Update for gradle to 8.3
-* Update for maven from to maven-publish 
+* Update for maven from to maven-publish
 
 ### 2.1.0
 * Support for "Expires" field
