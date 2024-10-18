@@ -7,10 +7,21 @@
             <occurrences minimum="1" maximum="1"/>
             <options minimum="1" maximum="1">
                 <option name="textarea">
-                    <label i18n="textarea.label">Textarea</label>
+                    <label i18n="textarea.label">Textareas</label>
                     <items>
                         <input name="text" type="TextArea">
-                            <label i18n="text">Text</label>
+                            <label i18n="text">Security text</label>
+                            <occurrences minimum="0" maximum="1"/>
+                            <help-text i18n="text.help-text">Paste your security text here. It will appear on your domain like this:
+                                www.example.com/security.txt and www.example.com/.well-known/security.txt
+                            </help-text>
+                        </input>
+                        <input name="encryption" type="TextArea">
+                            <label i18n="encryption">Encryption</label>
+                            <occurrences minimum="0" maximum="1"/>
+                            <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
+                                www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt
+                            </help-text>
                         </input>
                     </items>
                 </option>
@@ -19,7 +30,7 @@
                     <items>
                         <input name="comments" type="TextArea">
                             <label i18n="comments">Comments</label>
-                            <occurences minimum="0" maximum="1"/>
+                            <occurrences minimum="0" maximum="1"/>
                             <help-text i18n="comments.help-text">Display comments at the top of the security.txt. Write # followed by your comment, for example "# This is a comment". Use # for each new line.
                             </help-text>
                         </input>
@@ -33,7 +44,7 @@
                                     <items>
                                         <input name="email" type="TextLine">
                                             <label i18n="contact.email.address">E-mail address</label>
-                                            <occurences minimum="1" maximum="1"/>
+                                            <occurrences minimum="1" maximum="1"/>
                                             <help-text i18n="contact.email.help-text">Add an e-mail address that researchers MAY use for
                                                 reporting security issues.
                                             </help-text>
@@ -68,14 +79,14 @@
                         </option-set>
                         <input name="encryption" type="TextArea">
                             <label i18n="encryption">Encryption</label>
-                            <occurences minimum="0" maximum="1"/>
+                            <occurrences minimum="0" maximum="1"/>
                             <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
-                                www.example.com/public-key.txt
+                                www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt
                             </help-text>
                         </input>
                         <input name="acknowledgements" type="TextLine">
                             <label i18n="acknowledgements">Acknowledgements</label>
-                            <occurences minimum="0" maximum="1"/>
+                            <occurrences minimum="0" maximum="1"/>
                             <help-text i18n="acknowledgements.help-text">This directive allows you to link to a page where security
                                 researchers are recognized for their reports. The page SHOULD list
                                 individuals or companies that disclosed security vulnerabilities and
@@ -84,7 +95,7 @@
                         </input>
                         <input name="policy" type="TextLine">
                             <label i18n="policy">Policy</label>
-                            <occurences minimum="0" maximum="1"/>
+                            <occurrences minimum="0" maximum="1"/>
                             <help-text i18n="policy.help-text">With the Policy directive, you can link to where your security policy and/or disclosure policy is
                                 located. This can help security researchers understand what you are looking for and how to report
                                 security vulnerabilities.
@@ -92,14 +103,14 @@
                         </input>
                         <input name="hiring" type="TextLine">
                             <label i18n="hiring">Hiring</label>
-                            <occurences minimum="0" maximum="1"/>
+                            <occurrences minimum="0" maximum="1"/>
                             <help-text i18n="hiring.help-text">The "Hiring" directive is for linking to the vendor's security-
                                 related job positions.
                             </help-text>
                         </input>
                         <input name="preferredLanguages" type="TextLine">
                             <label i18n="preferred-languages">Preferred languages</label>
-                            <occurences minimum="0" maximum="1"/>
+                            <occurrences minimum="0" maximum="1"/>
                             <help-text i18n="preferredLanguages.help-text">
                                 The "Preferred-languages" is used to indicate a set of natural languages that are preferred when submitting security reports. Write language tags in a comma-seperated list for example "en, es, fr".
                             </help-text>
@@ -143,6 +154,9 @@
         </mapping>
         <mapping controller="/services/securitytxt/publickey.js" order="10">
             <pattern>/pgp-key.txt</pattern>
+        </mapping>
+        <mapping controller="/services/securitytxt/publickey.js" order="10">
+            <pattern>/.well-known/pgp-key.txt</pattern>
         </mapping>
     </mappings>
 </site>
