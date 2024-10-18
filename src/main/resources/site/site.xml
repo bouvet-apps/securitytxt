@@ -7,10 +7,21 @@
             <occurrences minimum="1" maximum="1"/>
             <options minimum="1" maximum="1">
                 <option name="textarea">
-                    <label i18n="textarea.label">Textarea</label>
+                    <label i18n="textarea.label">Textareas</label>
                     <items>
                         <input name="text" type="TextArea">
-                            <label i18n="text">Text</label>
+                            <label i18n="text">Security text</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="text.help-text">Paste your security text here. It will appear on your domain like this:
+                                www.example.com/security.txt and www.example.com/.well-known/security.txt
+                            </help-text>
+                        </input>
+                        <input name="encryption" type="TextArea">
+                            <label i18n="encryption">Encryption</label>
+                            <occurences minimum="0" maximum="1"/>
+                            <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
+                                www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt
+                            </help-text>
                         </input>
                     </items>
                 </option>
@@ -70,7 +81,7 @@
                             <label i18n="encryption">Encryption</label>
                             <occurences minimum="0" maximum="1"/>
                             <help-text i18n="encryption.help-text">Paste your public key here. It will appear on your domain like this:
-                                www.example.com/public-key.txt
+                                www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt
                             </help-text>
                         </input>
                         <input name="acknowledgements" type="TextLine">
@@ -143,6 +154,9 @@
         </mapping>
         <mapping controller="/services/securitytxt/publickey.js" order="10">
             <pattern>/pgp-key.txt</pattern>
+        </mapping>
+        <mapping controller="/services/securitytxt/publickey.js" order="10">
+            <pattern>/.well-known/pgp-key.txt</pattern>
         </mapping>
     </mappings>
 </site>
