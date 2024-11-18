@@ -91,6 +91,10 @@ This app is available in English and Norwegian. Language is automatically detect
 
 ## Changelog
 
+### 2.3.0
+* Added a textarea option for public key
+* Several bugfixes
+
 ### 2.2.0
 * Added textarea option. Enables the use of PGP-signed security.txt
 * Added input fields for comments, preferred language and option to display canonical URLs
