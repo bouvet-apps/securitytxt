@@ -64,7 +64,7 @@ function createFieldsSecurityTxt(siteConfig) {
 }
 
 function handleGet() {
-  let siteConfig = libs.portal.getSiteConfig();
+  const siteConfig = libs.portal.getSiteConfig();
   let securityTxt = "";
 
   // We don't have Babel in this app to transpile es6, so we can't use optional chaining as long as EnonicXP uses the Nashorn engine.
