@@ -1,0 +1,14 @@
+kind: "Site"
+mappings:
+  - controller: "/services/securitytxt/securitytxt.js"
+    order: 10
+    pattern: "/security.txt"
+  - controller: "/services/securitytxt/securitytxt.js"
+    order: 10
+    pattern: "/.well-known/security.txt"
+  - controller: "/services/securitytxt/publickey.js"
+    order: 10
+    pattern: "/pgp-key.txt"
+  - controller: "/services/securitytxt/publickey.js"
+    order: 10
+    pattern: "/.well-known/pgp-key.txt"

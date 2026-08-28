@@ -1,0 +1,224 @@
+kind: "CMS"
+form:
+  - type: "OptionSet"
+    name: "options"
+    expanded: false
+    label:
+      text: "Use textarea or input fields"
+      i18n: "options.label"
+    occurrences:
+      min: 1
+      max: 1
+    options:
+      - name: "textarea"
+        label:
+          text: "Textareas"
+          i18n: "textarea.label"
+        items:
+          - type: "TextArea"
+            name: "text"
+            label:
+              text: "Security text"
+              i18n: "text"
+            helpText:
+              text: "Paste your security text here. It will appear on your domain like this: www.example.com/security.txt and www.example.com/.well-known/security.txt"
+              i18n: "text.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "TextArea"
+            name: "encryption"
+            label:
+              text: "Encryption"
+              i18n: "encryption"
+            helpText:
+              text: "Paste your public key here. It will appear on your domain like this: www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt"
+              i18n: "encryption.help-text"
+            occurrences:
+              min: 0
+              max: 1
+      - name: "fields"
+        label:
+          text: "Input fields"
+          i18n: "fields.label"
+        items:
+          - type: "TextArea"
+            name: "comments"
+            label:
+              text: "Comments"
+              i18n: "comments"
+            helpText:
+              text: "Display comments at the top of the security.txt. Write # followed by your comment, for example \"# This is a comment\". Use # for each new line."
+              i18n: "comments.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "OptionSet"
+            name: "contactOptions"
+            expanded: false
+            label:
+              text: "Contact"
+              i18n: "contact"
+            occurrences:
+              min: 1
+              max: 1
+            options:
+              - name: "email"
+                label:
+                  text: "E-mail"
+                  i18n: "contact.email.label"
+                items:
+                  - type: "TextLine"
+                    name: "email"
+                    label:
+                      text: "E-mail address"
+                      i18n: "contact.email.address"
+                    helpText:
+                      text: "Add an e-mail address that researchers MAY use for reporting security issues."
+                      i18n: "contact.email.help-text"
+                    occurrences:
+                      min: 1
+                      max: 1
+              - name: "tel"
+                label:
+                  text: "Phone"
+                  i18n: "contact.tel.label"
+                items:
+                  - type: "TextLine"
+                    name: "tel"
+                    label:
+                      text: "Phone"
+                      i18n: "contact.tel"
+                    helpText:
+                      text: "Add a phone number that researchers MAY use for reporting security issues."
+                      i18n: "contact.tel.help-text"
+                    occurrences:
+                      min: 1
+                      max: 1
+              - name: "url"
+                label:
+                  text: "Web page"
+                  i18n: "contact.url.label"
+                items:
+                  - type: "TextLine"
+                    name: "url"
+                    label:
+                      text: "URL"
+                      i18n: "contact.url"
+                    helpText:
+                      text: "Add an web address that researchers MAY use for reporting security issues."
+                      i18n: "contact.url.help-text"
+                    occurrences:
+                      min: 1
+                      max: 1
+            selection:
+              min: 1
+              max: 3
+          - type: "TextArea"
+            name: "encryption"
+            label:
+              text: "Encryption"
+              i18n: "encryption"
+            helpText:
+              text: "Paste your public key here. It will appear on your domain like this: www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt"
+              i18n: "encryption.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "TextLine"
+            name: "acknowledgements"
+            label:
+              text: "Acknowledgements"
+              i18n: "acknowledgements"
+            helpText:
+              text: "This directive allows you to link to a page where security researchers are recognized for their reports. The page SHOULD list individuals or companies that disclosed security vulnerabilities and worked with you to remediate the issue."
+              i18n: "acknowledgements.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "TextLine"
+            name: "policy"
+            label:
+              text: "Policy"
+              i18n: "policy"
+            helpText:
+              text: "With the Policy directive, you can link to where your security policy and/or disclosure policy is located. This can help security researchers understand what you are looking for and how to report security vulnerabilities."
+              i18n: "policy.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "TextLine"
+            name: "hiring"
+            label:
+              text: "Hiring"
+              i18n: "hiring"
+            helpText:
+              text: "The \"Hiring\" directive is for linking to the vendor's security-related job positions."
+              i18n: "hiring.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "TextLine"
+            name: "preferredLanguages"
+            label:
+              text: "Preferred languages"
+              i18n: "preferred-languages"
+            helpText:
+              text: "The \"Preferred-languages\" is used to indicate a set of natural languages that are preferred when submitting security reports. Write language tags in a comma-seperated list for example \"en, es, fr\"."
+              i18n: "preferredLanguages.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "CheckBox"
+            name: "displayCanonical"
+            label:
+              text: "Display canonical URIs"
+              i18n: "display-canonical"
+            helpText:
+              text: "Check to display canonical URIs for where the \"security.txt\" is located. Ex. \"https://example.com/.well-known/security.txt\""
+              i18n: "display-canonical.help-text"
+            occurrences:
+              min: 0
+              max: 1
+          - type: "OptionSet"
+            name: "expiresOptions"
+            expanded: false
+            label:
+              text: "Expires"
+              i18n: "expiresOptions.label"
+            helpText:
+              text: "Select a dynamic or static expiry date for security.txt."
+              i18n: "expiresOptions.help-text"
+            occurrences:
+              min: 1
+              max: 1
+            options:
+              - name: "dynamic"
+                label:
+                  text: "Auto-generated dynamic date"
+                  i18n: "expiresOptions.dynamic.label"
+                helpText:
+                  text: "Sets the expiry date to dynamically be in 60 days."
+                  i18n: "expiresOptions.dynamic.help-text"
+              - name: "static"
+                label:
+                  text: "Fixed/static date (manually selected)"
+                  i18n: "expiresOptions.static.label"
+                helpText:
+                  text: "Sets the expiry date to be a static date. Make sure you update this value periodically and keep your file under review."
+                  i18n: "expiresOptions.static.help-text"
+                items:
+                  - type: "Date"
+                    name: "date"
+                    label:
+                      text: "Date"
+                      i18n: "expiresOptions.static.date"
+                    occurrences:
+                      min: 1
+                      max: 1
+            selection:
+              min: 1
+              max: 1
+    selection:
+      min: 1
+      max: 1
