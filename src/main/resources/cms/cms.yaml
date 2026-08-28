@@ -21,10 +21,7 @@ form:
               text: "Security text"
               i18n: "text"
             helpText:
-              text: "Paste your security text here. It will appear on your domain\
-                \ like this:\n                                www.example.com/security.txt\
-                \ and www.example.com/.well-known/security.txt\n                 \
-                \           "
+              text: "Paste your security text here. It will appear on your domain like this: www.example.com/security.txt and www.example.com/.well-known/security.txt"
               i18n: "text.help-text"
             occurrences:
               min: 0
@@ -35,10 +32,7 @@ form:
               text: "Encryption"
               i18n: "encryption"
             helpText:
-              text: "Paste your public key here. It will appear on your domain like\
-                \ this:\n                                www.example.com/pgp-key.txt\
-                \ and www.example.com/.well-known/pgp-key.txt\n                  \
-                \          "
+              text: "Paste your public key here. It will appear on your domain like this: www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt"
               i18n: "encryption.help-text"
             occurrences:
               min: 0
@@ -54,9 +48,7 @@ form:
               text: "Comments"
               i18n: "comments"
             helpText:
-              text: "Display comments at the top of the security.txt. Write # followed\
-                \ by your comment, for example \"# This is a comment\". Use # for\
-                \ each new line.\n                            "
+              text: "Display comments at the top of the security.txt. Write # followed by your comment, for example \"# This is a comment\". Use # for each new line."
               i18n: "comments.help-text"
             occurrences:
               min: 0
@@ -82,10 +74,7 @@ form:
                       text: "E-mail address"
                       i18n: "contact.email.address"
                     helpText:
-                      text: "Add an e-mail address that researchers MAY use for\n\
-                        \                                                reporting\
-                        \ security issues.\n                                     \
-                        \       "
+                      text: "Add an e-mail address that researchers MAY use for reporting security issues."
                       i18n: "contact.email.help-text"
                     occurrences:
                       min: 1
@@ -101,10 +90,7 @@ form:
                       text: "Phone"
                       i18n: "contact.tel"
                     helpText:
-                      text: "Add an e-mail address that researchers MAY use for\n\
-                        \                                                reporting\
-                        \ security issues.\n                                     \
-                        \       "
+                      text: "Add an e-mail address that researchers MAY use for reporting security issues."
                       i18n: "contact.tel.help-text"
                     occurrences:
                       min: 1
@@ -120,9 +106,7 @@ form:
                       text: "URL"
                       i18n: "contact.url"
                     helpText:
-                      text: "Add an web address that researchers MAY use for\n   \
-                        \                                             reporting security\
-                        \ issues.\n                                            "
+                      text: "Add an web address that researchers MAY use for reporting security issues."
                       i18n: "contact.url.help-text"
                     occurrences:
                       min: 1
@@ -136,10 +120,7 @@ form:
               text: "Encryption"
               i18n: "encryption"
             helpText:
-              text: "Paste your public key here. It will appear on your domain like\
-                \ this:\n                                www.example.com/pgp-key.txt\
-                \ and www.example.com/.well-known/pgp-key.txt\n                  \
-                \          "
+              text: "Paste your public key here. It will appear on your domain like this: www.example.com/pgp-key.txt and www.example.com/.well-known/pgp-key.txt"
               i18n: "encryption.help-text"
             occurrences:
               min: 0
@@ -150,12 +131,7 @@ form:
               text: "Acknowledgements"
               i18n: "acknowledgements"
             helpText:
-              text: "This directive allows you to link to a page where security\n\
-                \                                researchers are recognized for their\
-                \ reports. The page SHOULD list\n                                individuals\
-                \ or companies that disclosed security vulnerabilities and\n     \
-                \                           worked with you to remediate the issue.\n\
-                \                            "
+              text: "This directive allows you to link to a page where security researchers are recognized for their reports. The page SHOULD list individuals or companies that disclosed security vulnerabilities and worked with you to remediate the issue."
               i18n: "acknowledgements.help-text"
             occurrences:
               min: 0
@@ -166,11 +142,7 @@ form:
               text: "Policy"
               i18n: "policy"
             helpText:
-              text: "With the Policy directive, you can link to where your security\
-                \ policy and/or disclosure policy is\n                           \
-                \     located. This can help security researchers understand what\
-                \ you are looking for and how to report\n                        \
-                \        security vulnerabilities.\n                            "
+              text: "With the Policy directive, you can link to where your security policy and/or disclosure policy is located. This can help security researchers understand what you are looking for and how to report security vulnerabilities."
               i18n: "policy.help-text"
             occurrences:
               min: 0
@@ -181,9 +153,7 @@ form:
               text: "Hiring"
               i18n: "hiring"
             helpText:
-              text: "The \"Hiring\" directive is for linking to the vendor's security-\n\
-                \                                related job positions.\n        \
-                \                    "
+              text: "The \"Hiring\" directive is for linking to the vendor's security-related job positions."
               i18n: "hiring.help-text"
             occurrences:
               min: 0
@@ -194,10 +164,7 @@ form:
               text: "Preferred languages"
               i18n: "preferred-languages"
             helpText:
-              text: "\n                                The \"Preferred-languages\"\
-                \ is used to indicate a set of natural languages that are preferred\
-                \ when submitting security reports. Write language tags in a comma-seperated\
-                \ list for example \"en, es, fr\".\n                            "
+              text: "The \"Preferred-languages\" is used to indicate a set of natural languages that are preferred when submitting security reports. Write language tags in a comma-seperated list for example \"en, es, fr\"."
               i18n: "preferredLanguages.help-text"
             occurrences:
               min: 0
@@ -208,8 +175,7 @@ form:
               text: "Display canonical URIs"
               i18n: "display-canonical"
             helpText:
-              text: "Check to display canonical URIs for where the \"security.txt\"\
-                \ is located. Ex. \"https://example.com/.well-known/security.txt\""
+              text: "Check to display canonical URIs for where the \"security.txt\" is located. Ex. \"https://example.com/.well-known/security.txt\""
               i18n: "display-canonical.help-text"
             occurrences:
               min: 0
@@ -239,8 +205,7 @@ form:
                   text: "Fixed/static date (manually selected)"
                   i18n: "expiresOptions.static.label"
                 helpText:
-                  text: "Sets the expiry date to be a static date. Make sure you update\
-                    \ this value periodically and keep your file under review."
+                  text: "Sets the expiry date to be a static date. Make sure you update this value periodically and keep your file under review."
                   i18n: "expiresOptions.static.help-text"
                 items:
                   - type: "Date"
