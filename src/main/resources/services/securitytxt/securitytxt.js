@@ -13,13 +13,16 @@ function createFieldsSecurityTxt(siteConfig) {
 
   if (siteConfig.contactOptions) {
     libs.util.data.forceArray(siteConfig.contactOptions).forEach(function (item) {
-      if (item._selected === "url" && item[item._selected].url) {
-        securityTxt += "Contact: " + item[item._selected].url + "\n";
-      } else if (item._selected === "tel" && item[item._selected].tel) {
-        securityTxt += "Contact: tel:" + item[item._selected].tel + "\n";
-      } else if (item._selected === "email" && item[item._selected].email) {
-        securityTxt += "Contact: mailto:" + item[item._selected].email + "\n";
-      }
+      // _selected is a string for single-selection OptionSets and an array when multiple selections are allowed.
+      libs.util.data.forceArray(item._selected).forEach(function (selected) {
+        if (selected === "url" && item.url && item.url.url) {
+          securityTxt += "Contact: " + item.url.url + "\n";
+        } else if (selected === "tel" && item.tel && item.tel.tel) {
+          securityTxt += "Contact: tel:" + item.tel.tel + "\n";
+        } else if (selected === "email" && item.email && item.email.email) {
+          securityTxt += "Contact: mailto:" + item.email.email + "\n";
+        }
+      });
     });
   }
 

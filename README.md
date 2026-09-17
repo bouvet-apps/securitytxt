@@ -12,7 +12,7 @@ and locate the 'Security.txt' app in the 'Enonic Market' tab. Now click the 'Ins
 button.
 
 ### Build yourself
-Build this app with gradle. In the terminal, from the root of the project, enter `./gradlew build`. On Windows, just enter `gradlew build`
+Build this app with gradle. Requires JDK 25. In the terminal, from the root of the project, enter `./gradlew build`. On Windows, just enter `gradlew build`
 in the command line from the project root. Next, move the JAR file from build/libs to your `$XP_HOME/deploy` directory. The Security.txt
 app will now be available to add to your websites through the Content Manager app.
 
@@ -85,11 +85,15 @@ This app is available in English and Norwegian. Language is automatically detect
 
 | App version | XP version |
 | ----------- | ---------- |
+| 3.x.x | 8.0.0 |
 | 2.x.x | 7.10.0 |
 | 1.0.x | 6.7.0 |
 
 
 ## Changelog
+
+### 3.0.0
+* Enonic XP 8 compatibility. Requires XP 8 and JDK 25 — use the 2.x releases for XP 7
 
 ### 2.3.0
 * Added a textarea option for public key
